@@ -37,8 +37,9 @@ When detecting EMG signals from the surface, like in the dry electrode applicati
 ### How do people get usable data out of these tiny signals?
 Amplifying these signals is **imperative** for getting real outputs. Typically, instrumental amplifiers like the INA333 are used as a first stage, where later on people tend to use a variety of amplification processes. For example, using **differential amplifiers** helps exaggerate the difference in the MUAPs, which is more telling of when a contraction occurs. In conjunction with these stages, a mediative bandpass filter is typically applied to reject very low and very high frequencies out of the picture.
 
-Here is a differential amplifier. Typically, R1=R2 and R3=R4, yielding an amplification equation of $$U_{a} = \frac{R_2}{R_1}(U_{e+} - U_{e-})$$
+Here is a differential amplifier. Typically, R1=R2 and R3=R4, yielding an amplification equation of $$U_{a} = \frac{R_2}{R_1}(U_{e+} - U_{e-})$$ [2]
 ![Differential Amplifier](media/differential_amp.png)
+[3]
 
 ## 2. Tools Needed
 WIP
