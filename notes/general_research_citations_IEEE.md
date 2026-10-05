@@ -1,15 +1,13 @@
 
-# WORKS CITED
-### (IEEE)
+# WORKS CITED (IEEE)
+This corresponds to the research notes in **GENERAL RESEARCH**.
 
-<div style="padding-left: 1.5em; text-indent: -1.5em; margin-bottom: 1.0em;">
-[1] M. B. I. Reaz, M. S. Hussain, and F. Mohd-Yasin, "Techniques of EMG signal analysis: detection, processing, classification and applications," <i>Biol. Proced. Online</i>, vol. 8, pp. 11–35, Dec. 2006. doi: 10.1251/bpo115. Accessed Oct. 4, 2026.
-</div>
+## References
 
-<div style="padding-left: 1.5em; text-indent: -1.5em; margin-bottom: 1.0em;">
-[2] Electronics Tutorials, "The Differential Amplifier," Electronics Tutorials. https://www.electronics-tutorials.ws/opamp/opamp_5.html Accessed Oct. 4, 2026.
-</div>
+\[1\] M. B. I. Reaz, M. S. Hussain, and F. Mohd-Yasin, "Techniques of EMG signal analysis: Detection, processing, classification and applications," *Biol. Proced. Online*, vol. 8, pp. 11–35, 2006, doi: [10.1251/bpo115](https://doi.org/10.1251/bpo115).
 
-<div style="padding-left: 1.5em; text-indent: -1.5em; margin-bottom: 1.0em;">
-[2] D. Braun, "Differential Amplifier," Wikimedia Commons, Jun. 3, 2007. [Digital Graphic]. Available: https://commons.wikimedia.org/wiki/File:Differential_Amplifier.svg. Accessed Oct. 4, 2026.
-</div>
+\[2\] Electronics-Tutorials.ws, "The differential amplifier." Accessed: Oct. 4, 2026. \[Online\]. Available: <https://www.electronics-tutorials.ws/opamp/opamp_5.html>
+
+\[3\] D. Braun, "Differential amplifier," Wikimedia Commons, Jun. 3, 2007. Accessed: Oct. 4, 2026. \[Online\]. Available: <https://commons.wikimedia.org/wiki/File:Differential_Amplifier.svg>
+
+\[4\] D. Mackey, "Chapter 3-4: A/D example: EMG - Electromyography," in *Measurement & Inquiry in Kinesiology*, Simon Fraser Univ., Burnaby, BC, Canada. Accessed: Oct. 4, 2026. \[Online\]. Available: <https://www.sfu.ca/~dmackey/Chap%203-4%20EMG.pdf>
