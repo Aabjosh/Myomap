@@ -10,4 +10,4 @@ This corresponds to the research notes in **GENERAL RESEARCH**.
 
 \[3\] D. Braun, "Differential amplifier," Wikimedia Commons, Jun. 3, 2007. Accessed: Oct. 4, 2026. \[Online\]. Available: <https://commons.wikimedia.org/wiki/File:Differential_Amplifier.svg>
 
-\[4\] D. Mackey, "Chapter 3-4: A/D example: EMG - Electromyography," in *Measurement & Inquiry in Kinesiology*, Simon Fraser Univ., Burnaby, BC, Canada. Accessed: Oct. 4, 2026. \[Online\]. Available: <https://www.sfu.ca/~dmackey/Chap%203-4%20EMG.pdf>
+\[4\] Simon Fraser University, "Chapter 3-4: A/D example: EMG - Electromyography," in *Measurement & Inquiry in Kinesiology*, Burnaby, BC, Canada. Accessed: Oct. 4, 2026. \[Online\]. Available: <https://www.sfu.ca/~dmackey/Chap%203-4%20EMG.pdf>
