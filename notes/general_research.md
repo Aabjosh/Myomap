@@ -58,4 +58,7 @@ Some common interferences:
 3. *Motion artifacts.* Unwanted movements in other areas of the body, or even nearby (potentially as a result of the action that is being measured by EMG) can skew the data being collected. Motion artifacts also refer to the distortions caused by shifting from the surface electrodes and wire movement.
 
 ## 2. Tools Needed
-WIP
+I need to figure out how to actually talk to and from EMG peripherals over a wireless connection. After some quick looking around, it seems BLE is a good fit
+- It's low powered
+- I can use one EMG as a host for multiple activation points, or one activation point as a host for multiple EMG peripherals
+- There is a standardized way of developing Bluetooth stuff

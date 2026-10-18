@@ -32,6 +32,9 @@ Based on my attempts, these are the things I need to fix!!:
 - Input impedance must've been really high on the washers, so the only signal I actually saw was in the single microvolt range (even out of the INA333)
 - The surface contact area of the button heads must've been too small to pick up enough signal (imagine a teeny tiny car antenna, you wouldn't get any radio reception out of that)
 
+## NRF54L15: The SoC with BLE and NFC in mind
+
+
 ## Plan
 - Make a reliable circuit with big, medical wet electrodes
 - Research materials used in EMG and EEG for dry electrodes (that arent gold lol)
