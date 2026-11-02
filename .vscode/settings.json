@@ -1,5 +1,6 @@
 {
     "nrf-connect.applications": [
-        "${workspaceFolder}\\prototyping\\src\\nordic_learning\\blinky"
+        "${workspaceFolder}\\prototyping\\src\\nordic_learning\\blinky",
+        "${workspaceFolder}\\prototyping\\src\\nordic_learning\\peripheral_lbs"
     ]
 }

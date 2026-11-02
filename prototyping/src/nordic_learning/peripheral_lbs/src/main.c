@@ -26,13 +26,11 @@
 
 #include <dk_buttons_and_leds.h>
 
-#include <zephyr/drivers/adc.h>
+#include "adc_read.h"
 
 #include <zephyr/logging/log.h>
 
 LOG_MODULE_REGISTER(app, LOG_LEVEL_INF);
-
-static const struct adc_dt_spec adc_channel = ADC_DT_SPEC_GET(DT_PATH(zephyr_user));
 
 #define DEVICE_NAME             CONFIG_BT_DEVICE_NAME
 #define DEVICE_NAME_LEN         (sizeof(DEVICE_NAME) - 1)
@@ -292,23 +290,19 @@ int main(void)
 		return 0;
 	}
 
-	for (;;) {
+	struct adc_result result;
+
+	for (;;) 
+	{
 		dk_set_led(RUN_STATUS_LED, (++blink_status) % 2);
 
-		err = adc_read(adc_channel.dev, &sequence);
-		if (err < 0) {
-			LOG_ERR("ADC read failed (%d)", err);
+		err = app_adc_read(&result);
+		if (err) {
+				LOG_ERR("ADC read failed (%d)", err);
 		} else {
-			int32_t val_mv = buf;
-
-			err = adc_raw_to_millivolts_dt(&adc_channel, &val_mv);
-			if (err < 0) {
-				LOG_WRN("mV conversion not available");
-			} else {
-				LOG_INF("ADC raw: %d = %d mV", buf, val_mv);
-			}
+				LOG_INF("ADC raw: %d = %d mV", result.raw, result.mv);
 		}
 
 		k_sleep(K_MSEC(RUN_LED_BLINK_INTERVAL));
-	}
+    }
 }

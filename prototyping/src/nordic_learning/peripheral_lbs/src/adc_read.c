@@ -1,22 +1,14 @@
 #include <zephyr/drivers/adc.h>
+#include <errno.h>
+#include <zephyr/devicetree.h>
+#include <zephyr/logging/log.h>
+
+#include "adc_read.h"
+
+LOG_MODULE_REGISTER(app_adc, LOG_LEVEL_INF);
 
 static const struct adc_dt_spec adc_channel = ADC_DT_SPEC_GET(DT_PATH(zephyr_user));
 int16_t buf;
-int32_t val_mv;
-
-// Make sure the ADC is ready to do stuff
-if (!adc_is_ready_dt(&adc_channel)) 
-{
-	LOG_ERR("ADC controller devivce %s not ready", adc_channel.dev->name);
-	return 0;
-}
-
-err = adc_channel_setup_dt(&adc_channel);
-if (err < 0) 
-{
-	LOG_ERR("Could not setup channel #%d (%d)", 0, err);
-	return 0;
-}
 
 // Blueprint of how to save the data from the adc
 struct adc_sequence sequence = 
@@ -28,25 +20,44 @@ struct adc_sequence sequence =
     //.calibrate = true,
 };
 
-err = adc_sequence_init_dt(&adc_channel, &sequence);
-if (err < 0) 
+int app_adc_init()
 {
-    LOG_ERR("Could not initalize sequnce");
+    int err = 0;
+
+    if (!adc_is_ready_dt(&adc_channel)) 
+    {
+        LOG_ERR("ADC controller devivce %s not ready", adc_channel.dev->name);
+        return -ENODEV;
+    }
+
+    err = adc_channel_setup_dt(&adc_channel);
+    if (err < 0) 
+    {
+        LOG_ERR("Could not setup channel #%d (%d)", 0, err);
+        return err;
+    }
+
+    err = adc_sequence_init_dt(&adc_channel, &sequence);
+    if (err < 0) 
+    {
+        LOG_ERR("Could not initalize sequnce");
+        return err;
+    }
+
     return 0;
 }
 
-err = adc_read(adc_channel.dev, &sequence);
-if (err < 0) 
+int app_adc_read(struct *adc_reult)
 {
-    LOG_ERR("Could not read (%d)", err);
-    continue;
-}
+    int err = adc_read(adc_channel.dev, &sequence);
+    if (err < 0) 
+    {
+        LOG_ERR("Could not read (%d)", err);
+        return err;
+    }
 
-val_mv = buf;
-err = adc_raw_to_millivolts_dt(&adc_channel, &val_mv);
-/* conversion to mV may not be supported, skip if not */
-if (err < 0) {
-    LOG_WRN(" (value in mV not available)\n");
-} else {
-    LOG_INF(" = %d mV", val_mv);
+    adc_result->raw = buf;
+    adc_result->mv = buf;
+
+    return adc_raw_to_millivolts_dt(&adc_channel, &val_mv);
 }
