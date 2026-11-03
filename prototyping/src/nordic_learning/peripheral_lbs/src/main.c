@@ -267,28 +267,8 @@ int main(void)
 	k_work_init(&adv_work, adv_work_handler);
 	advertising_start();
 
-	int16_t buf;
-	struct adc_sequence sequence = {
-		.buffer = &buf,
-		.buffer_size = sizeof(buf),   /* bytes, not samples */
-	};
-
-	if (!adc_is_ready_dt(&adc_channel)) {
-		LOG_ERR("ADC device %s not ready", adc_channel.dev->name);
-		return 0;
-	}
-
-	err = adc_channel_setup_dt(&adc_channel);
-	if (err < 0) {
-		LOG_ERR("ADC channel setup failed (%d)", err);
-		return 0;
-	}
-
-	err = adc_sequence_init_dt(&adc_channel, &sequence);
-	if (err < 0) {
-		LOG_ERR("ADC sequence init failed (%d)", err);
-		return 0;
-	}
+	err = app_adc_init();
+    if (err) return 0;
 
 	struct adc_result result;
 

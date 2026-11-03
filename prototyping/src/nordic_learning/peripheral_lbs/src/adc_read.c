@@ -47,7 +47,7 @@ int app_adc_init()
     return 0;
 }
 
-int app_adc_read(struct *adc_reult)
+int app_adc_read( struct adc_result *result )
 {
     int err = adc_read(adc_channel.dev, &sequence);
     if (err < 0) 
@@ -56,8 +56,8 @@ int app_adc_read(struct *adc_reult)
         return err;
     }
 
-    adc_result->raw = buf;
-    adc_result->mv = buf;
+    result->raw = buf;
+    result->mv = buf;
 
-    return adc_raw_to_millivolts_dt(&adc_channel, &val_mv);
+    return adc_raw_to_millivolts_dt(&adc_channel, &result->mv);
 }

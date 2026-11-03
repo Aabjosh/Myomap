@@ -7,7 +7,7 @@ struct adc_result
 {
     int16_t raw;
     int32_t mv;
-}
+};
 
 int app_adc_init(void);
 int app_adc_read(struct adc_result *result);

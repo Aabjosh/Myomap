@@ -11,6 +11,7 @@ project(peripheral_lbs)
 # NORDIC SDK APP START
 target_sources(app PRIVATE
   src/main.c
+  src/adc_read.c
 )
 
 # NORDIC SDK APP END
